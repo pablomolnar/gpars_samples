@@ -1,0 +1,12 @@
+target/
+stacktrace.log
+.classpath
+.project
+.redcar
+.idea/*
+.settings/*
+*.iml
+*.swp
+*~
+*.tld
+*.log
