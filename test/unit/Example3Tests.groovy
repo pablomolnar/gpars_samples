@@ -5,6 +5,7 @@ import grails.test.mixin.support.GrailsUnitTestMixin
 import javax.crypto.KeyGenerator
 import org.junit.Test
 import static groovyx.gpars.GParsPool.withPool
+import static Utils.time
 
 @TestMixin(GrailsUnitTestMixin)
 class Example3Tests {
@@ -17,17 +18,17 @@ class Example3Tests {
 
         DesEncrypter encrypter = new DesEncrypter(KeyGenerator.getInstance("DES").generateKey())
 
-        Utils.time {
+        time {
             assert words == words.collect { encrypter.encrypt(it) }.collect { encrypter.decrypt(it) }
         }
 
-        Utils.time {
+        time {
             withPool {
                 assert words == words.collectParallel { encrypter.encrypt(it) }.collectParallel { encrypter.decrypt(it) }
             }
         }
 
-        Utils.time {
+        time {
             withPool {
                 words.asConcurrent { assert words == words.collect { encrypter.encrypt(it) }.collect { encrypter.decrypt(it) } }
             }

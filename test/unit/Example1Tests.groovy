@@ -8,7 +8,7 @@ import static groovyx.gpars.GParsPool.withPool
 @TestMixin(GrailsUnitTestMixin)
 class Example1Tests {
 
-    static final basicParams = [access_token: 'AAAAAAITEghMBAPfQSloYaUWFcCtZAKzvXuz8mZAGAFJ7xMYdWRkTpYRImWheYnjnn13dtdRgZC54zimInbs127UiZCY1R3mzYIHvr3TsfQZDZD', limit: 5000]
+    static final basicParams = [access_token: 'XXX', limit: 5000]
 
     @Test
     void "Example 1 - Fork Join: search users from facebook"() {

@@ -3,6 +3,7 @@
 import grails.test.mixin.TestMixin
 import grails.test.mixin.support.GrailsUnitTestMixin
 import groovyx.gpars.dataflow.Dataflows
+import static groovyx.gpars.dataflow.Dataflow.task
 import org.junit.Test
 
 @TestMixin(GrailsUnitTestMixin)
